@@ -1,25 +1,15 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="org.purple.smoke.Chat">
     <item android:title="@string/authenticate"
         android:id="@+id/action_authenticate"
         android:orderInCategory="100" />
     <item
-        android:id="@+id/action_chat"
-        android:orderInCategory="200"
-        android:title="@string/chat" />
-    <item
         android:id="@+id/action_exit"
-        android:orderInCategory="300"
+        android:orderInCategory="200"
         android:title="@string/exit" />
-    <item
-        android:id="@+id/action_fire"
-        android:orderInCategory="400"
-        android:title="@string/fire" />
     <item
         android:id="@+id/action_smokescreen"
         android:orderInCategory="500"
         android:title="@string/smokescreen" />
-    <item
-        android:id="@+id/action_steam"
-        android:orderInCategory="600"
-        android:title="@string/steam" />
 </menu>

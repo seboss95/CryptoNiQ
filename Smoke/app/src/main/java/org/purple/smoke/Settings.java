@@ -3704,6 +3704,12 @@ public class Settings extends AppCompatActivity
 	{
 	    switch(itemId)
 	    {
+			case R.id.home:{
+				Intent intentFire = new Intent(Settings.this, Chat.class);
+				startActivity(intentFire);
+				finish();
+				return true;
+			}
 	    case R.id.action_chat:
 		m_databaseHelper.writeSetting(null, "lastActivity", "Chat");
 		showChatActivity();
@@ -3772,17 +3778,25 @@ public class Settings extends AppCompatActivity
 	    isAuthenticated = true;
 
 	menu.findItem(R.id.action_authenticate).setEnabled(!isAuthenticated);
-	menu.findItem(R.id.action_chat).setEnabled
-	    (State.getInstance().isAuthenticated());
-	menu.findItem(R.id.action_fire).setEnabled
-	    (State.getInstance().isAuthenticated());
+	//menu.findItem(R.id.action_chat).setEnabled
+	//    (State.getInstance().isAuthenticated());
+	//menu.findItem(R.id.action_fire).setEnabled
+	 //   (State.getInstance().isAuthenticated());
 	menu.findItem(R.id.action_smokescreen).setEnabled
 	    (State.getInstance().isAuthenticated());
-	menu.findItem(R.id.action_steam).setEnabled
-	    (State.getInstance().isAuthenticated());
+	//menu.findItem(R.id.action_steam).setEnabled
+	 //   (State.getInstance().isAuthenticated());
 	Miscellaneous.addMembersToMenu(menu, 6, 250);
 	return true;
     }
+
+	@Override
+	public void onBackPressed()
+	{
+		Intent intentSettings = new Intent(Settings.this, Chat.class);
+		startActivity(intentSettings);
+		super.onBackPressed();
+	}
 
     @Override
     public void onCreateContextMenu(ContextMenu menu,

@@ -677,6 +677,17 @@ public class Steam extends AppCompatActivity
 	{
 	    switch(itemId)
 	    {
+			case R.id.home:{
+				Intent intent = new Intent();
+
+				intent.putExtra("Result", "Done");
+				setResult(RESULT_OK, intent);
+
+				Intent intentSteam = new Intent(Steam.this, Chat.class);
+				startActivity(intentSteam);
+				finish();
+				return true;
+			}
 	    case R.id.action_chat:
 		m_databaseHelper.writeSetting(null, "lastActivity", "Chat");
 		showChatActivity();
@@ -756,6 +767,10 @@ public class Steam extends AppCompatActivity
 
 	intent.putExtra("Result", "Done");
 	setResult(RESULT_OK, intent);
+
+		Intent intentSteam = new Intent(Steam.this, Chat.class);
+		startActivity(intentSteam);
+		finish();
 	super.onBackPressed();
     }
 
